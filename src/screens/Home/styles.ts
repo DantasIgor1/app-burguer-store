@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {FilterMenuStyleProps} from './types';
 
-export const Container = styled(SafeAreaProvider)`
+export const Container = styled(SafeAreaView)`
   flex: 1;
   background-color: #232227;
   padding: 24px;

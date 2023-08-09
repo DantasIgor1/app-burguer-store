@@ -7,7 +7,7 @@ export const leftSideIcon =
   'https://cdn-icons-png.flaticon.com/128/3126/3126539.png';
 export const rightSideIcon =
   'https://www.shareicon.net/data/512x512/2015/10/31/664907_search_512x512.png';
-export const FilterIconUri =
+export const filterIconUri =
   'https://cdn-icons-png.flaticon.com/128/3126/3126539.png';
 export const DATA = [
   {

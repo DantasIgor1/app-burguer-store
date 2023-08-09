@@ -15,7 +15,7 @@ import {Header} from '../../components/Header';
 import {BurgerCard} from '../../components/BurgerCard';
 import {
   DATA,
-  FilterIconUri,
+  filterIconUri,
   filter,
   leftSideIcon,
   rightSideIcon,
@@ -49,7 +49,7 @@ export const Home: React.FC = () => {
         <TouchableFilterOptions>
           <FilterIcon
             source={{
-              uri: FilterIconUri,
+              uri: filterIconUri,
             }}
           />
         </TouchableFilterOptions>
