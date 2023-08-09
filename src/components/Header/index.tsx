@@ -30,6 +30,3 @@ export const Header = ({leftSideIcon, rightSideIcon}: HeaderProps) => {
     </Container>
   );
 };
-// TODO: Remove all unnecessary comments
-//'https://icon-library.com/images/hamburger-menu-icon-png-white/hamburger-menu-icon-png-white-14.jpg'
-//'https://www.shareicon.net/data/512x512/2015/10/31/664907_search_512x512.png'

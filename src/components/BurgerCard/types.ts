@@ -1,7 +1,4 @@
-// FIXME: Change the name of the interface to BurgerProps
-// dont forget to import the correct name on the component
-
-export interface CardProps {
+export interface BurguerProps {
   title?: string;
   description?: string;
   details?: string;

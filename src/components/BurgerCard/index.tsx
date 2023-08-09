@@ -7,10 +7,10 @@ import {
   BurgerName,
   BurgerPrice,
 } from './styles';
-import {CardProps} from './types';
+import {BurguerProps} from './types';
 import {useNavigation} from '@react-navigation/native';
 
-export const BurgerCard = ({item}: {item: CardProps}) => {
+export const BurgerCard = ({item}: {item: BurguerProps}) => {
   /**
    * Navigation
    */

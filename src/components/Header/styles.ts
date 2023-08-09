@@ -13,10 +13,8 @@ export const LeftSideIcon = styled.Image`
   tint-color: white;
 `;
 
-// TODO: Keep the same size for both icons on the Header component
-
 export const RightSideIcon = styled.Image`
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   tint-color: white;
 `;

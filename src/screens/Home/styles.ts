@@ -1,13 +1,8 @@
 import styled from 'styled-components/native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {FilterMenuStyleProps} from './types';
 
-// TODO: Move this interface to a types.ts file and export it to here
-interface FilterMenuStyleProps {
-  isSelected: boolean;
-}
-
-// FIXME: SafeAreaView component from the react native docs is only functional for iOS devices
-// if you need the SafeAreaView for android devices, you must install the react-native-safe-area-provider lib
-export const Container = styled.SafeAreaView`
+export const Container = styled(SafeAreaProvider)`
   flex: 1;
   background-color: #232227;
   padding: 24px;
