@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
+// TODO: Remove all the unnused imports
 import {
   AddToCharButton,
   AddToCartContainer,
   AddToCartLabel,
   Container,
-  HamburguerDescription,
-  HamburguerDetails,
-  HamburguerImage,
-  HamburguerInfoContainer,
-  HamburguerLabelContainer,
-  HamburguerName,
+  BurgerDescription,
+  BurgerDetails,
+  BurgerImage,
+  BurgerInfoContainer,
+  BurgerLabelContainer,
+  BurgerName,
   QuantityOfBurguers,
   AddToCartButton,
   CartContainer,
@@ -26,48 +27,64 @@ import {Header} from '../../components/Header';
 import {useRoute} from '@react-navigation/native';
 
 export const Internal: React.FC = () => {
-  const [numberOfHamburguers, setNumberOfHamburguers] = useState(1);
+  /**
+   * Navigation
+   */
   const {params} = useRoute();
   const {item} = params;
+
+  /**
+   * States
+   */
+  const [numberOfBurgers, setNumberOfBurgers] = useState(1);
+
+  /**
+   * Callbacks
+   */
   const handleIncrement = () => {
-    setNumberOfHamburguers(numberOfHamburguers + 1);
+    // FIXME: use the ((oldState) => oldState + 1) syntax to proper handling of the
+    // state life cycle
+    setNumberOfBurgers(numberOfBurgers + 1);
   };
   const handleDecrement = () => {
-    if (numberOfHamburguers === 1) {
+    if (numberOfBurgers === 1) {
       return;
     }
-    setNumberOfHamburguers(numberOfHamburguers - 1);
+    // TODO: same here
+    setNumberOfBurgers(numberOfBurgers - 1);
   };
+
   return (
     <Container>
       <Header
+        // TODO: move the static urls to the mocks.ts file and import them to here
         leftSideIcon="https://cdn-icons-png.flaticon.com/512/32/32542.png"
         rightSideIcon="https://static.thenounproject.com/png/4572884-200.png"
       />
-      <HamburguerImage source={{uri: item?.url}} />
-      <HamburguerLabelContainer>
-        <HamburguerInfoContainer>
-          <HamburguerName>{item?.title}</HamburguerName>
-          <HamburguerDescription>{item?.description}</HamburguerDescription>
-        </HamburguerInfoContainer>
+      <BurgerImage source={{uri: item?.url}} />
+      <BurgerLabelContainer>
+        <BurgerInfoContainer>
+          <BurgerName>{item?.title}</BurgerName>
+          <BurgerDescription>{item?.description}</BurgerDescription>
+        </BurgerInfoContainer>
 
         <AddToCartContainer>
           <AddToCartButton onPress={handleDecrement}>
             <AddToCartLabel>-</AddToCartLabel>
           </AddToCartButton>
-          <QuantityOfBurguers>{numberOfHamburguers}</QuantityOfBurguers>
+          <QuantityOfBurguers>{numberOfBurgers}</QuantityOfBurguers>
           <AddToCartButton onPress={handleIncrement}>
             <AddToCartLabel>+</AddToCartLabel>
           </AddToCartButton>
         </AddToCartContainer>
-      </HamburguerLabelContainer>
+      </BurgerLabelContainer>
       <PurchaseDetails>
-        <HamburguerDetails>{item?.buyDetail}</HamburguerDetails>
+        <BurgerDetails>{item?.buyDetail}</BurgerDetails>
         <Footer>
           <CartContainer>
             <TotalPriceLabel>Total Price</TotalPriceLabel>
             <OrderPrice>
-              {(item.price * numberOfHamburguers).toLocaleString('pt-br', {
+              {(item.price * numberOfBurgers).toLocaleString('pt-br', {
                 style: 'currency',
                 currency: 'BRL',
               })}
@@ -77,6 +94,7 @@ export const Internal: React.FC = () => {
             <OrderNowLabel>Order Now</OrderNowLabel>
             <CartIcon
               source={{
+                // TODO: move the static urls to the mocks.ts file and import them to here
                 uri: 'https://cdn-icons-png.flaticon.com/512/263/263142.png',
               }}
             />

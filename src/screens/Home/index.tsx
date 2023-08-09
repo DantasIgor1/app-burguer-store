@@ -12,8 +12,9 @@ import {
   YellowDot,
 } from './styles';
 import {Header} from '../../components/Header';
-import {HamburguerCard} from '../../components/HamburguerCard';
+import {BurgerCard} from '../../components/BurgerCard';
 
+// TODO: Move all the mocked info to a mocks.ts file
 const filter = [
   {id: 1, label: 'Burguer'},
   {id: 2, label: 'Pasta'},
@@ -60,10 +61,17 @@ const DATA = [
 ];
 
 export const Home: React.FC = () => {
+  /**
+   * States
+   */
+
+  // Type the state to it's correct type
   const [selectedFoodTypeId, setSelectedFoodTypeId] = useState(1);
+
   return (
     <Container>
       <Header
+        // TODO: Move all the static urls to the mocks.ts file and export them as a const
         leftSideIcon="https://icon-library.com/images/hamburger-menu-icon-png-white/hamburger-menu-icon-png-white-14.jpg"
         rightSideIcon="https://www.shareicon.net/data/512x512/2015/10/31/664907_search_512x512.png"
       />
@@ -85,6 +93,7 @@ export const Home: React.FC = () => {
         <TouchableFilterOptions>
           <FilterIcon
             source={{
+              // TODO: move this static url to the mocks.ts file as well
               uri: 'https://cdn-icons-png.flaticon.com/128/3126/3126539.png',
             }}
           />
@@ -94,8 +103,10 @@ export const Home: React.FC = () => {
         numColumns={2}
         showsVerticalScrollIndicator={false}
         data={DATA}
-        renderItem={({item}) => <HamburguerCard item={item} />}
-        keyExtractor={item => item.id.toString()}
+        renderItem={({item}) => <BurgerCard item={item} />}
+        keyExtractor={(item, index) =>
+          `burguer-${item.id}-in-list-position-${index}`
+        }
       />
     </Container>
   );

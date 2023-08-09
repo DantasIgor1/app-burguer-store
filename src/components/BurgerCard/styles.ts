@@ -6,7 +6,7 @@ export const Container = styled.TouchableOpacity`
   border-radius: 8px;
 `;
 
-export const HamburguerImage = styled.Image.attrs({
+export const BurgerImage = styled.Image.attrs({
   resizeMode: 'contain',
 })`
   width: 150px;
@@ -14,18 +14,18 @@ export const HamburguerImage = styled.Image.attrs({
   align-self: center;
 `;
 
-export const HamburguerName = styled.Text`
+export const BurgerName = styled.Text`
   font-size: 20px;
   color: white;
   font-weight: bold;
 `;
 
-export const HamburguerDetails = styled.Text`
+export const BurgerDetails = styled.Text`
   font-size: 16px;
   color: white;
 `;
 
-export const HamburguerPrice = styled.Text`
+export const BurgerPrice = styled.Text`
   color: white;
   font-size: 16px;
   font-weight: bold;

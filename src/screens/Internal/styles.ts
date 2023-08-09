@@ -6,7 +6,7 @@ export const Container = styled.SafeAreaView`
   background-color: #232227;
 `;
 
-export const HamburguerImage = styled.Image.attrs({
+export const BurgerImage = styled.Image.attrs({
   resizeMode: 'contain',
 })`
   width: 100%;
@@ -14,13 +14,14 @@ export const HamburguerImage = styled.Image.attrs({
   align-self: center;
 `;
 
-export const HamburguerLabelContainer = styled.View`
+export const BurgerLabelContainer = styled.View`
   width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 `;
-export const HamburguerName = styled.Text`
+
+export const BurgerName = styled.Text`
   color: white;
   font-size: 28px;
   font-weight: bold;
@@ -44,20 +45,22 @@ export const AddToCartButton = styled.TouchableOpacity`
   background-color: #ffffff;
   justify-content: center;
 `;
+
 export const QuantityOfBurguers = styled.Text`
   color: white;
   font-size: 16px;
   align-self: center;
 `;
+
 export const AddToCartLabel = styled.Text`
   color: black;
   font-size: 20px;
   align-self: center;
 `;
 
-export const HamburguerInfoContainer = styled.View``;
+export const BurgerInfoContainer = styled.View``;
 
-export const HamburguerDescription = styled.Text.attrs({
+export const BurgerDescription = styled.Text.attrs({
   numberOfLines: 1,
 })`
   color: white;
@@ -69,10 +72,10 @@ export const HamburguerDescription = styled.Text.attrs({
 export const PurchaseDetails = styled.View`
   flex: 1;
   justify-content: space-between;
-
   margin-top: 40px;
 `;
-export const HamburguerDetails = styled.Text`
+
+export const BurgerDetails = styled.Text`
   color: white;
   font-size: 16px;
   font-weight: 400;
@@ -108,6 +111,7 @@ export const OrderNowContainer = styled.TouchableOpacity`
   flex-direction: row;
   padding: 14px;
 `;
+
 export const OrderNowLabel = styled.Text`
   color: #ffffff;
   font-size: 14px;
