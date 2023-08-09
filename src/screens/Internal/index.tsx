@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
+
 import {
-  AddToCharButton,
   AddToCartContainer,
   AddToCartLabel,
   Container,
-  HamburguerDescription,
-  HamburguerDetails,
-  HamburguerImage,
-  HamburguerInfoContainer,
-  HamburguerLabelContainer,
-  HamburguerName,
+  BurgerDescription,
+  BurgerDetails,
+  BurgerImage,
+  BurgerInfoContainer,
+  BurgerLabelContainer,
+  BurgerName,
   QuantityOfBurguers,
   AddToCartButton,
   CartContainer,
@@ -19,55 +19,65 @@ import {
   OrderPrice,
   OrderNowLabel,
   CartIcon,
-  Separator,
   PurchaseDetails,
 } from './styles';
 import {Header} from '../../components/Header';
 import {useRoute} from '@react-navigation/native';
+import {CartIconUri, leftSideIcon, rightSideIcon} from './mocks';
 
 export const Internal: React.FC = () => {
-  const [numberOfHamburguers, setNumberOfHamburguers] = useState(1);
+  /**
+   * Navigation
+   */
   const {params} = useRoute();
   const {item} = params;
+
+  /**
+   * States
+   */
+  const [numberOfBurgers, setNumberOfBurgers] = useState(1);
+
+  /**
+   * Callbacks
+   */
   const handleIncrement = () => {
-    setNumberOfHamburguers(numberOfHamburguers + 1);
+    setNumberOfBurgers(oldState => oldState + 1);
   };
   const handleDecrement = () => {
-    if (numberOfHamburguers === 1) {
+    if (numberOfBurgers === 1) {
       return;
     }
-    setNumberOfHamburguers(numberOfHamburguers - 1);
+
+    setNumberOfBurgers(oldState => oldState - 1);
   };
+
   return (
     <Container>
-      <Header
-        leftSideIcon="https://cdn-icons-png.flaticon.com/512/32/32542.png"
-        rightSideIcon="https://static.thenounproject.com/png/4572884-200.png"
-      />
-      <HamburguerImage source={{uri: item?.url}} />
-      <HamburguerLabelContainer>
-        <HamburguerInfoContainer>
-          <HamburguerName>{item?.title}</HamburguerName>
-          <HamburguerDescription>{item?.description}</HamburguerDescription>
-        </HamburguerInfoContainer>
+      <Header leftSideIcon={leftSideIcon} rightSideIcon={rightSideIcon} />
+      <BurgerImage source={{uri: item?.url}} />
+      <BurgerLabelContainer>
+        <BurgerInfoContainer>
+          <BurgerName>{item?.title}</BurgerName>
+          <BurgerDescription>{item?.description}</BurgerDescription>
+        </BurgerInfoContainer>
 
         <AddToCartContainer>
           <AddToCartButton onPress={handleDecrement}>
             <AddToCartLabel>-</AddToCartLabel>
           </AddToCartButton>
-          <QuantityOfBurguers>{numberOfHamburguers}</QuantityOfBurguers>
+          <QuantityOfBurguers>{numberOfBurgers}</QuantityOfBurguers>
           <AddToCartButton onPress={handleIncrement}>
             <AddToCartLabel>+</AddToCartLabel>
           </AddToCartButton>
         </AddToCartContainer>
-      </HamburguerLabelContainer>
+      </BurgerLabelContainer>
       <PurchaseDetails>
-        <HamburguerDetails>{item?.buyDetail}</HamburguerDetails>
+        <BurgerDetails>{item?.buyDetail}</BurgerDetails>
         <Footer>
           <CartContainer>
             <TotalPriceLabel>Total Price</TotalPriceLabel>
             <OrderPrice>
-              {(item.price * numberOfHamburguers).toLocaleString('pt-br', {
+              {(item.price * numberOfBurgers).toLocaleString('pt-br', {
                 style: 'currency',
                 currency: 'BRL',
               })}
@@ -77,7 +87,7 @@ export const Internal: React.FC = () => {
             <OrderNowLabel>Order Now</OrderNowLabel>
             <CartIcon
               source={{
-                uri: 'https://cdn-icons-png.flaticon.com/512/263/263142.png',
+                uri: CartIconUri,
               }}
             />
           </OrderNowContainer>

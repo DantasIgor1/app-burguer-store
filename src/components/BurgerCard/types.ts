@@ -1,4 +1,4 @@
-export interface CardProps {
+export interface BurguerProps {
   title?: string;
   description?: string;
   details?: string;

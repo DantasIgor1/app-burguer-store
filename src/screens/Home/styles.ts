@@ -1,9 +1,8 @@
 import styled from 'styled-components/native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {FilterMenuStyleProps} from './types';
 
-interface FilterMenuStyleProps {
-  isSelected: boolean;
-}
-export const Container = styled.SafeAreaView`
+export const Container = styled(SafeAreaView)`
   flex: 1;
   background-color: #232227;
   padding: 24px;
@@ -32,7 +31,6 @@ export const FilterMenu = styled.View`
 export const BlankDot = styled.View`
   width: 8px;
   height: 8px;
-  border-radius: 4px;
 `;
 
 export const YellowDot = styled.View`
